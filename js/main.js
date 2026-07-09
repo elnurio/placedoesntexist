@@ -13,17 +13,20 @@
   onScroll();
   window.addEventListener("scroll", onScroll, { passive: true });
 
-  // Mobile nav toggle
-  burger.addEventListener("click", () => {
-    const isOpen = nav.classList.toggle("open");
+  // Nav overlay toggle
+  const setNavOpen = (isOpen) => {
+    nav.classList.toggle("open", isOpen);
+    header.classList.toggle("nav-open", isOpen);
     burger.setAttribute("aria-expanded", String(isOpen));
+    document.body.style.overflow = isOpen ? "hidden" : "";
+  };
+
+  burger.addEventListener("click", () => {
+    setNavOpen(!nav.classList.contains("open"));
   });
 
   nav.querySelectorAll("a").forEach((link) => {
-    link.addEventListener("click", () => {
-      nav.classList.remove("open");
-      burger.setAttribute("aria-expanded", "false");
-    });
+    link.addEventListener("click", () => setNavOpen(false));
   });
 
   // Reveal on scroll
