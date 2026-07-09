@@ -478,49 +478,51 @@ h2 { font-size: clamp(32px, 4.5vw, 52px); margin-bottom: 48px; }
 /* Directions / Cards                                             */
 /* ------------------------------------------------------------ */
 .directions {
-  position: relative;
   padding: var(--section-y) 0;
-  background: var(--bg-alt);
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
 }
-.directions::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: url("../content/IMG_7800.jpg") center / cover no-repeat;
-  opacity: 0.5;
-  pointer-events: none;
-}
-.directions .container { position: relative; }
 
 .cards {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1px;
-  background: var(--line);
-  border: 1px solid var(--line);
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid var(--line);
 }
 
 .card {
-  background: rgba(246, 243, 236, 0.72);
-  backdrop-filter: blur(6px);
-  padding: 44px 32px;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: clamp(28px, 5vw, 80px);
+  padding: clamp(28px, 4vw, 48px) 8px;
+  border-bottom: 1px solid var(--line);
+  color: inherit;
+}
+
+.card-art {
+  width: clamp(150px, 17vw, 230px);
+  align-self: stretch;
   display: flex;
-  flex-direction: column;
-  gap: 20px;
-  transition: background 0.4s var(--ease);
+  align-items: center;
 }
-.card:hover { background: rgba(246, 243, 236, 0.92); }
+.card-art img {
+  width: 100%;
+  display: block;
+  mix-blend-mode: multiply;
+}
 
-.card-icon {
-  width: 40px; height: 40px;
+.card-body { max-width: 560px; }
+.card h3 { font-size: clamp(24px, 2.6vw, 34px); margin-bottom: 18px; }
+.card p { color: var(--ink-soft); font-size: 16px; line-height: 1.65; }
+
+.card-arrow {
   color: var(--ink);
+  justify-self: end;
+  padding-right: clamp(4px, 3vw, 40px);
+  transition: transform 0.35s var(--ease);
 }
-.card-icon svg { width: 100%; height: 100%; }
-
-.card h3 { font-size: 22px; }
-.card p { color: var(--ink-soft); font-size: 15px; line-height: 1.6; }
+.card-arrow svg { width: 38px; height: 38px; display: block; }
+a.card:hover .card-arrow { transform: translateX(10px); }
 
 /* ------------------------------------------------------------ */
 /* Italy                                                           */
@@ -731,7 +733,17 @@ h2 { font-size: clamp(32px, 4.5vw, 52px); margin-bottom: 48px; }
 
   .about-grid { grid-template-columns: 1fr; }
 
-  .cards { grid-template-columns: 1fr; }
+  .card {
+    grid-template-columns: auto 1fr;
+    gap: 24px;
+  }
+  .card-art { width: clamp(96px, 26vw, 150px); }
+  .card-arrow {
+    grid-column: 2;
+    justify-self: start;
+    padding: 0;
+  }
+  .card-arrow svg { width: 30px; height: 30px; }
 
   .italy-grid { grid-template-columns: 1fr; }
   .italy-visual { order: 1; }
