@@ -631,7 +631,7 @@ h2 { font-size: clamp(32px, 4.5vw, 52px); margin-bottom: 48px; }
 /* Fargo portfolio page                                            */
 /* ------------------------------------------------------------ */
 .fargo-main {
-  padding: 110px 0 60px;
+  padding: 90px 0 60px;
   max-width: 1400px;
   margin: 0 auto;
 }
@@ -645,6 +645,15 @@ h2 { font-size: clamp(32px, 4.5vw, 52px); margin-bottom: 48px; }
 .fargo-set img {
   width: 100%;
   display: block;
+}
+
+/* Full-bleed cover slide: backdrop stretches across the whole screen */
+.fargo-set img:first-child {
+  width: 100vw;
+  max-width: none;
+  margin-left: calc(50% - 50vw);
+  height: calc(100svh - 90px);
+  object-fit: cover;
 }
 
 /* ------------------------------------------------------------ */
