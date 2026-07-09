@@ -30,26 +30,42 @@
   // Show the scrolled (cream) header while hovering the inline nav
   if (navInline) {
     navInline.addEventListener("mouseenter", () => header.classList.add("nav-hover"));
-    navInline.addEventListener("mouseleave", () => header.classList.remove("nav-hover"));
+    navInline.addEventListener("mouseleave", () => {
+      // Keep the cream background while the submenu row is open — the
+      // cursor is likely traveling down toward it.
+      if (!header.classList.contains("subrow-open")) {
+        header.classList.remove("nav-hover");
+      }
+    });
+  }
 
-    // Dropdown panels sit flush under the whole header bar, not just under
-    // the trigger word, so their position is computed on hover rather than
-    // pinned via CSS to the (short, vertically-centered) nav-item box.
-    navInline.querySelectorAll(".nav-item").forEach((item) => {
-      const dropdown = item.querySelector(".nav-dropdown");
-      if (!dropdown) return;
+  // Submenu second row: hovering a nav link with data-menu expands the
+  // header downward with that link's subitems (CASA REN-style), instead
+  // of a floating dropdown. Closes when the cursor leaves the header.
+  const submenus = document.querySelectorAll(".nav-submenu");
+  const closeSubrow = () => {
+    header.classList.remove("subrow-open");
+    submenus.forEach((menu) => menu.classList.remove("is-active"));
+  };
 
-      const openDropdown = () => {
-        const headerRect = header.getBoundingClientRect();
-        const itemRect = item.getBoundingClientRect();
-        dropdown.style.top = `${headerRect.bottom}px`;
-        dropdown.style.left = `${itemRect.left}px`;
-        item.classList.add("is-open");
-      };
-      const closeDropdown = () => item.classList.remove("is-open");
+  if (navInline && submenus.length) {
+    navInline.querySelectorAll(".nav-link").forEach((link) => {
+      link.addEventListener("mouseenter", () => {
+        const menuId = link.getAttribute("data-menu");
+        if (!menuId) {
+          closeSubrow();
+          return;
+        }
+        submenus.forEach((menu) => {
+          menu.classList.toggle("is-active", menu.getAttribute("data-menu") === menuId);
+        });
+        header.classList.add("subrow-open", "nav-hover");
+      });
+    });
 
-      item.addEventListener("mouseenter", openDropdown);
-      item.addEventListener("mouseleave", closeDropdown);
+    header.addEventListener("mouseleave", () => {
+      closeSubrow();
+      header.classList.remove("nav-hover");
     });
   }
 

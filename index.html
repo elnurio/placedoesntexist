@@ -15,36 +15,35 @@
 <div class="noise"></div>
 
 <header class="site-header" id="header">
-  <nav class="nav-inline">
-    <div class="nav-item">
-      <a href="#about" data-i18n="nav.architecture">Архитектура</a>
-      <div class="nav-dropdown">
-        <a href="#partners">Fargo</a>
-      </div>
-    </div>
-    <div class="nav-item">
-      <a href="#directions" data-i18n="nav.design">Дизайн</a>
-    </div>
-    <div class="nav-item">
-      <a href="#doors" data-i18n="nav.doors">Двери</a>
-      <div class="nav-dropdown">
-        <a href="#partners">Viani Porte</a>
-      </div>
-    </div>
-  </nav>
+  <div class="header-bar">
+    <nav class="nav-inline">
+      <a href="#about" class="nav-link" data-menu="architecture" data-i18n="nav.architecture">Архитектура</a>
+      <a href="#directions" class="nav-link" data-i18n="nav.design">Дизайн</a>
+      <a href="#doors" class="nav-link" data-menu="doors" data-i18n="nav.doors">Двери</a>
+    </nav>
 
-  <div class="lang-switch" id="langSwitch">
-    <button type="button" class="lang-btn is-active" data-lang="ru">RU</button>
-    <span class="lang-sep">/</span>
-    <button type="button" class="lang-btn" data-lang="en">EN</button>
+    <div class="lang-switch" id="langSwitch">
+      <button type="button" class="lang-btn is-active" data-lang="ru">RU</button>
+      <span class="lang-sep">/</span>
+      <button type="button" class="lang-btn" data-lang="en">EN</button>
+    </div>
+
+    <div class="container header-inner">
+      <button class="burger" id="burger" aria-label="Открыть меню" aria-expanded="false" data-i18n-attr="burger.label">
+        <span></span><span></span><span></span>
+      </button>
+
+      <a href="#top" class="logo" data-i18n="brand">Место Которого Нет</a>
+    </div>
   </div>
 
-  <div class="container header-inner">
-    <button class="burger" id="burger" aria-label="Открыть меню" aria-expanded="false" data-i18n-attr="burger.label">
-      <span></span><span></span><span></span>
-    </button>
-
-    <a href="#top" class="logo" data-i18n="brand">Место Которого Нет</a>
+  <div class="nav-subrow" id="navSubrow">
+    <div class="nav-submenu" data-menu="architecture">
+      <a href="#partners">Fargo</a>
+    </div>
+    <div class="nav-submenu" data-menu="doors">
+      <a href="#partners">Viani Porte</a>
+    </div>
   </div>
 </header>
 
