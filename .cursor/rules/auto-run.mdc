@@ -1,0 +1,13 @@
+---
+description: Auto-approve routine site edits and deploys for this project
+alwaysApply: true
+---
+
+# Agent autonomy for placedoesntexist
+
+This is a static HTML/CSS/JS site on GitHub Pages. For this project:
+
+- Prefer acting without asking for confirmation on routine edits, commits, and pushes to `main` / the Pages branch.
+- After site changes, commit and push unless the user says not to.
+- Do not ask repeatedly for permission to run git, PowerShell inspection, or deploy-related commands.
+- Still avoid force-push, hard reset, and git config changes unless the user explicitly asks.

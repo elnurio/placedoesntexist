@@ -1,0 +1,71 @@
+{
+  "terminalAllowlist": [
+    "git",
+    "gh",
+    "npm",
+    "npx",
+    "node",
+    "python",
+    "python3",
+    "pip",
+    "pip3",
+    "curl",
+    "wget",
+    "ls",
+    "dir",
+    "Get-ChildItem",
+    "Get-Content",
+    "Get-Item",
+    "Test-Path",
+    "Select-String",
+    "Select-Object",
+    "Measure-Object",
+    "Invoke-WebRequest",
+    "powershell",
+    "pwsh",
+    "cmd",
+    "echo",
+    "cat",
+    "type",
+    "rg",
+    "findstr",
+    "where",
+    "which",
+    "mkdir",
+    "New-Item",
+    "Copy-Item",
+    "Move-Item",
+    "Remove-Item",
+    "rm",
+    "cp",
+    "mv",
+    "head",
+    "tail",
+    "sort",
+    "uniq",
+    "wc",
+    "basename",
+    "dirname",
+    "pwd",
+    "cd",
+    "Set-Location",
+    "Push-Location",
+    "Pop-Location"
+  ],
+  "mcpAllowlist": [
+    "*:*"
+  ],
+  "autoRun": {
+    "allow_instructions": [
+      "This is a static marketing site (HTML/CSS/JS) deployed via GitHub Pages. Auto-approve all normal site edits, git commits, and pushes to origin/main or the Pages branch.",
+      "Allow git status, diff, add, commit, push, fetch, pull, merge, checkout, branch, log, and remote commands for this repo.",
+      "Allow reading, writing, and deleting project files under the workspace, including content assets and CSS/JS/HTML.",
+      "Allow PowerShell inspection commands used while editing this site (Get-ChildItem, Get-Content, Test-Path, Select-String, Invoke-WebRequest for the live site).",
+      "Allow cache-busting and deploy-related changes without asking."
+    ],
+    "block_instructions": [
+      "Still ask before force-pushing, hard resets, or rewriting git history.",
+      "Still ask before changing git config or deleting the entire repository."
+    ]
+  }
+}
