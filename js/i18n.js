@@ -44,6 +44,7 @@ const I18N = (() => {
       "contact.heading": "Обсудим ваш<br /><em>проект</em>",
       "contact.sub": "Пришлите референсы, мудборд и детали проекта — мы свяжемся с вами, чтобы обсудить задачи и следующие шаги.",
       "footer.top": "Наверх",
+      "fargo.href": "content/Fargo%20Portfolio%20Ru.pdf",
     },
     en: {
       "meta.title": "Place Doesn't Exist — Full-Cycle Architecture & Interior Design",
@@ -86,6 +87,7 @@ const I18N = (() => {
       "contact.heading": "Let&rsquo;s discuss<br /><em>your project</em>",
       "contact.sub": "Send us your references, moodboard, and project details — we&rsquo;ll get in touch to discuss the brief and next steps.",
       "footer.top": "Back to top",
+      "fargo.href": "content/Fargo%20Portfolio%20Eng.pdf",
     },
   };
 
@@ -118,6 +120,11 @@ const I18N = (() => {
     document.querySelectorAll("[data-i18n-attr]").forEach((el) => {
       const key = el.getAttribute("data-i18n-attr");
       if (table[key] !== undefined) el.setAttribute("aria-label", table[key]);
+    });
+
+    document.querySelectorAll("[data-i18n-href]").forEach((el) => {
+      const key = el.getAttribute("data-i18n-href");
+      if (table[key] !== undefined) el.setAttribute("href", table[key]);
     });
 
     document.querySelectorAll(".lang-btn").forEach((btn) => {
