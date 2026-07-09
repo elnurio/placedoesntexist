@@ -508,12 +508,8 @@ h2 { font-size: clamp(32px, 4.5vw, 52px); margin-bottom: 48px; }
   padding: clamp(28px, 4vw, 48px) 8px;
   border-bottom: 1px solid var(--line);
   color: inherit;
-  background: rgba(246, 243, 236, 0.72);
-  backdrop-filter: blur(6px);
-  transition: background 0.4s var(--ease);
+  background: transparent;
 }
-.card:hover,
-a.card:hover { background: rgba(246, 243, 236, 0.92); }
 
 .card-art {
   width: clamp(150px, 17vw, 230px);
