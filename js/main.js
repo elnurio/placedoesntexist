@@ -3,9 +3,6 @@
   const burger = document.getElementById("burger");
   const nav = document.getElementById("nav");
   const navInline = document.querySelector(".nav-inline");
-  const yearEl = document.getElementById("year");
-
-  if (yearEl) yearEl.textContent = new Date().getFullYear();
 
   // Header background on scroll
   const onScroll = () => {
