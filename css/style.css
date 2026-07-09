@@ -640,13 +640,11 @@ h2 { font-size: clamp(32px, 4.5vw, 52px); margin-bottom: 48px; }
 .fargo-set.is-active {
   display: flex;
   flex-direction: column;
-  gap: 14px;
   padding: 0 clamp(10px, 2vw, 24px);
 }
 .fargo-set img {
   width: 100%;
   display: block;
-  box-shadow: 0 1px 12px rgba(23, 20, 15, 0.08);
 }
 
 /* ------------------------------------------------------------ */
