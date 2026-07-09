@@ -2,13 +2,13 @@
 /* Tokens                                                         */
 /* ------------------------------------------------------------ */
 :root {
-  --bg: #f6f3ec;
-  --bg-alt: #efeae0;
+  --bg: #ffffff;
+  --bg-alt: #ffffff;
   --ink: #17140f;
   --ink-soft: #6e685f;
   --line: rgba(23, 20, 15, 0.14);
   --dark-bg: #14120e;
-  --cream: #f6f3ec;
+  --cream: #ffffff;
 
   --dot-1: #96603f;
   --dot-2: #2b3868;
@@ -100,13 +100,13 @@ em { font-style: italic; }
   border-bottom: 1px solid transparent;
 }
 .site-header.scrolled {
-  background: rgba(246, 243, 236, 0.86);
+  background: rgba(255, 255, 255, 0.86);
   backdrop-filter: blur(10px);
   padding: 16px 0;
   border-color: var(--line);
 }
 .site-header.nav-hover {
-  background: rgba(246, 243, 236, 0.86);
+  background: rgba(255, 255, 255, 0.86);
   backdrop-filter: blur(10px);
   border-color: var(--line);
 }
@@ -563,11 +563,11 @@ a.card:hover .card-arrow { transform: translateX(10px); }
 /* Partners                                                        */
 /* ------------------------------------------------------------ */
 .partners { padding: var(--section-y) 0; background: var(--dark-bg); color: var(--cream); }
-.partners .eyebrow-row { color: rgba(246, 243, 236, 0.55); }
+.partners .eyebrow-row { color: rgba(255, 255, 255, 0.55); }
 .partners h2 { color: var(--cream); }
 .partners-lead {
   font-family: var(--font-display);
-  color: rgba(246, 243, 236, 0.82);
+  color: rgba(255, 255, 255, 0.82);
   font-size: clamp(18px, 1.9vw, 22px);
   max-width: 560px;
   margin-top: -20px;
@@ -577,26 +577,26 @@ a.card:hover .card-arrow { transform: translateX(10px); }
 .partners-row {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  border-top: 1px solid rgba(246, 243, 236, 0.16);
-  border-left: 1px solid rgba(246, 243, 236, 0.16);
+  border-top: 1px solid rgba(255, 255, 255, 0.16);
+  border-left: 1px solid rgba(255, 255, 255, 0.16);
 }
 .partner-slot {
-  border-right: 1px solid rgba(246, 243, 236, 0.16);
-  border-bottom: 1px solid rgba(246, 243, 236, 0.16);
+  border-right: 1px solid rgba(255, 255, 255, 0.16);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.16);
   padding: 40px 20px;
   display: flex;
   align-items: center;
   justify-content: center;
   font-family: var(--font-display);
   font-size: 15px;
-  color: rgba(246, 243, 236, 0.4);
+  color: rgba(255, 255, 255, 0.4);
   letter-spacing: 0.04em;
 }
 
 .partners-note {
   margin-top: 20px;
   font-size: 12px;
-  color: rgba(246, 243, 236, 0.4);
+  color: rgba(255, 255, 255, 0.4);
 }
 
 /* ------------------------------------------------------------ */
