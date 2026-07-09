@@ -594,9 +594,19 @@ h2 { font-size: clamp(32px, 4.5vw, 52px); margin-bottom: 48px; }
 /* Contact                                                         */
 /* ------------------------------------------------------------ */
 .contact {
+  position: relative;
   padding: var(--section-y) 0;
   text-align: center;
 }
+.contact::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("../content/contacts.webp") center / cover no-repeat;
+  opacity: 0.5;
+  pointer-events: none;
+}
+.contact .container { position: relative; }
 .contact h2 { margin-bottom: 24px; }
 .contact-sub {
   font-family: var(--font-display);
