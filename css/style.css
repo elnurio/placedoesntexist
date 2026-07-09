@@ -478,10 +478,21 @@ h2 { font-size: clamp(32px, 4.5vw, 52px); margin-bottom: 48px; }
 /* Directions / Cards                                             */
 /* ------------------------------------------------------------ */
 .directions {
+  position: relative;
   padding: var(--section-y) 0;
+  background: var(--bg-alt);
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
 }
+.directions::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("../content/IMG_7800.jpg") center / cover no-repeat;
+  opacity: 0.5;
+  pointer-events: none;
+}
+.directions .container { position: relative; }
 
 .cards {
   display: flex;
