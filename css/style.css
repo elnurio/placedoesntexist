@@ -240,10 +240,17 @@ em { font-style: italic; }
   height: 24px;
   justify-self: start;
   z-index: 210;
+  color: #fff;
+  transition: color 0.4s var(--ease);
+}
+.site-header.scrolled .burger,
+.site-header.nav-hover .burger,
+.site-header--solid .burger {
+  color: var(--ink);
 }
 .burger span {
   display: block;
-  height: 1px;
+  height: 1.5px;
   background: currentColor;
   transition: transform 0.3s var(--ease), opacity 0.3s var(--ease);
 }
@@ -751,6 +758,14 @@ a.card:hover .card-arrow { transform: translateX(10px); }
 @media (max-width: 860px) {
   .nav-inline { display: none; }
   .burger { display: flex; }
+  .header-inner {
+    justify-content: flex-start;
+    min-height: 28px;
+  }
+  .burger {
+    position: relative;
+    z-index: 220;
+  }
 
   /* Inner pages have no burger menu — keep the back link visible */
   .site-header--solid .nav-inline { display: flex; }
