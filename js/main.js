@@ -11,21 +11,23 @@
   onScroll();
   window.addEventListener("scroll", onScroll, { passive: true });
 
-  // Nav overlay toggle
-  const setNavOpen = (isOpen) => {
-    nav.classList.toggle("open", isOpen);
-    header.classList.toggle("nav-hover", isOpen);
-    burger.setAttribute("aria-expanded", String(isOpen));
-    document.body.style.overflow = isOpen ? "hidden" : "";
-  };
+  // Nav overlay toggle (main page only — subpages have no burger/overlay)
+  if (burger && nav) {
+    const setNavOpen = (isOpen) => {
+      nav.classList.toggle("open", isOpen);
+      header.classList.toggle("nav-hover", isOpen);
+      burger.setAttribute("aria-expanded", String(isOpen));
+      document.body.style.overflow = isOpen ? "hidden" : "";
+    };
 
-  burger.addEventListener("click", () => {
-    setNavOpen(!nav.classList.contains("open"));
-  });
+    burger.addEventListener("click", () => {
+      setNavOpen(!nav.classList.contains("open"));
+    });
 
-  nav.querySelectorAll("a").forEach((link) => {
-    link.addEventListener("click", () => setNavOpen(false));
-  });
+    nav.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => setNavOpen(false));
+    });
+  }
 
   // Show the scrolled (cream) header while hovering the inline nav
   if (navInline) {

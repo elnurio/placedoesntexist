@@ -46,6 +46,11 @@ const I18N = (() => {
       "footer.top": "Наверх",
       "fargo.title": "Fargo — Место Которого Нет",
       "fargo.back": "Назад",
+      "viani.title": "Viani Porte — Место Которого Нет",
+      "viani.eyebrow": "Двери",
+      "viani.p1": "VIANI Porte — проектно-контрактное производство дверей, стеновых панелей и мебели для гостиниц, жилых комплексов, офисов и общественных пространств.",
+      "viani.p2": "Компания сопровождает проект на каждом этапе — от разработки конструкторской документации и подбора материалов до производства, логистики и профессионального монтажа. Собственное производство, инженерная команда и многолетний опыт позволяют создавать как стандартные, так и индивидуальные решения, отвечающие высоким требованиям к дизайну, качеству и долговечности.",
+      "viani.p3": "VIANI объединяет архитектурный подход, современные технологии и внимание к деталям, помогая реализовывать проекты любой сложности.",
     },
     en: {
       "meta.title": "Place Doesn't Exist — Full-Cycle Architecture & Interior Design",
@@ -90,6 +95,11 @@ const I18N = (() => {
       "footer.top": "Back to top",
       "fargo.title": "Fargo — Place Doesn't Exist",
       "fargo.back": "Back",
+      "viani.title": "Viani Porte — Place Doesn't Exist",
+      "viani.eyebrow": "Doors",
+      "viani.p1": "VIANI Porte is a project- and contract-focused manufacturer of doors, wall panels, and furniture for hotels, residential complexes, offices, and public spaces.",
+      "viani.p2": "The company supports each project at every stage — from engineering documentation and material selection to production, logistics, and professional installation. In-house manufacturing, an engineering team, and years of experience make it possible to deliver both standard and bespoke solutions that meet the highest requirements for design, quality, and durability.",
+      "viani.p3": "VIANI brings together an architectural approach, modern technology, and attention to detail, helping deliver projects of any complexity.",
     },
   };
 
