@@ -16,7 +16,6 @@
   // Nav overlay toggle
   const setNavOpen = (isOpen) => {
     nav.classList.toggle("open", isOpen);
-    header.classList.toggle("nav-open", isOpen);
     burger.setAttribute("aria-expanded", String(isOpen));
     document.body.style.overflow = isOpen ? "hidden" : "";
   };
@@ -28,6 +27,20 @@
   nav.querySelectorAll("a").forEach((link) => {
     link.addEventListener("click", () => setNavOpen(false));
   });
+
+  // Hero slideshow
+  const slideshow = document.getElementById("heroSlideshow");
+  if (slideshow) {
+    const slides = slideshow.querySelectorAll(".hero-slide");
+    if (slides.length > 1) {
+      let current = 0;
+      setInterval(() => {
+        slides[current].classList.remove("is-active");
+        current = (current + 1) % slides.length;
+        slides[current].classList.add("is-active");
+      }, 5000);
+    }
+  }
 
   // Reveal on scroll
   const revealEls = document.querySelectorAll(".reveal");
