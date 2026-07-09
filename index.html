@@ -7,7 +7,7 @@
 <meta name="description" content="Архитектурные и интерьерные решения полного цикла: дверные системы, стеновые панели, мебель. Итальянский подход к дизайну." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,400;1,6..72,500&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,700;1,6..72,400;1,6..72,500&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
@@ -15,13 +15,13 @@
 <div class="noise"></div>
 
 <header class="site-header" id="header">
-  <div class="container header-inner">
-    <nav class="nav-inline">
-      <a href="#about">О компании</a>
-      <a href="#directions">Направления</a>
-      <a href="#contacts">Контакты</a>
-    </nav>
+  <nav class="nav-inline">
+    <a href="#about">О компании</a>
+    <a href="#directions">Направления</a>
+    <a href="#contacts">Контакты</a>
+  </nav>
 
+  <div class="container header-inner">
     <button class="burger" id="burger" aria-label="Открыть меню" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
@@ -45,10 +45,10 @@
 
   <!-- HERO -->
   <section class="hero">
-    <div class="hero-slideshow" id="heroSlideshow">
-      <img class="hero-slide is-active" src="content/maindesktop.webp" alt="Интерьер — референс проекта" />
-      <img class="hero-slide" src="content/mainmob.webp" alt="Интерьер — референс проекта, деталь" />
-    </div>
+    <picture class="hero-photo">
+      <source media="(max-width: 720px)" srcset="content/mainmob.webp" />
+      <img src="content/maindesktop.webp" alt="Интерьер — референс проекта" />
+    </picture>
     <div class="hero-scroll">
       <span></span>
       <p>Листайте</p>
