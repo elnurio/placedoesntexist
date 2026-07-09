@@ -14,6 +14,7 @@
   // Nav overlay toggle
   const setNavOpen = (isOpen) => {
     nav.classList.toggle("open", isOpen);
+    header.classList.toggle("nav-hover", isOpen);
     burger.setAttribute("aria-expanded", String(isOpen));
     document.body.style.overflow = isOpen ? "hidden" : "";
   };
@@ -30,6 +31,26 @@
   if (navInline) {
     navInline.addEventListener("mouseenter", () => header.classList.add("nav-hover"));
     navInline.addEventListener("mouseleave", () => header.classList.remove("nav-hover"));
+
+    // Dropdown panels sit flush under the whole header bar, not just under
+    // the trigger word, so their position is computed on hover rather than
+    // pinned via CSS to the (short, vertically-centered) nav-item box.
+    navInline.querySelectorAll(".nav-item").forEach((item) => {
+      const dropdown = item.querySelector(".nav-dropdown");
+      if (!dropdown) return;
+
+      const openDropdown = () => {
+        const headerRect = header.getBoundingClientRect();
+        const itemRect = item.getBoundingClientRect();
+        dropdown.style.top = `${headerRect.bottom}px`;
+        dropdown.style.left = `${itemRect.left}px`;
+        item.classList.add("is-open");
+      };
+      const closeDropdown = () => item.classList.remove("is-open");
+
+      item.addEventListener("mouseenter", openDropdown);
+      item.addEventListener("mouseleave", closeDropdown);
+    });
   }
 
   // Reveal on scroll
