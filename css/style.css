@@ -642,28 +642,35 @@ h2 { font-size: clamp(32px, 4.5vw, 52px); margin-bottom: 48px; }
   margin: 0 auto;
 }
 
-/* Watercolor artworks filling the page background. They sit behind the
-   slides; slide images have transparent margins, so the art shows
-   through empty areas but never covers text or photos. Multiply blend
-   melts the paper white into the cream site bg. */
+/* Watercolor artworks filling the page background edge to edge. They
+   sit behind the slides; slide images have transparent margins, so the
+   art shows through empty areas but never covers text or photos.
+   Multiply blend melts the paper white into the cream site bg. */
 .fargo-spots {
   position: absolute;
-  inset: 0;
+  top: 0;
+  bottom: 0;
+  left: calc(50% - 50vw);
+  width: 100vw;
   overflow: hidden;
   pointer-events: none;
   z-index: 0;
 }
 .fargo-spots img {
   position: absolute;
+  width: 100%;
   max-width: none;
   mix-blend-mode: multiply;
+  opacity: 0.35;
 }
-.fargo-spots img:nth-child(1) { top: 9%;  right: -12%; width: clamp(340px, 52vw, 780px); }
-.fargo-spots img:nth-child(2) { top: 23%; left: -14%;  width: clamp(320px, 48vw, 720px); }
-.fargo-spots img:nth-child(3) { top: 38%; right: -14%; width: clamp(340px, 52vw, 780px); }
-.fargo-spots img:nth-child(4) { top: 53%; left: -12%;  width: clamp(340px, 50vw, 750px); }
-.fargo-spots img:nth-child(5) { top: 68%; right: -12%; width: clamp(320px, 48vw, 720px); }
-.fargo-spots img:nth-child(6) { top: 84%; left: -14%;  width: clamp(340px, 52vw, 780px); }
+.fargo-spots img:nth-child(1) { top: 0; }
+.fargo-spots img:nth-child(2) { top: 12.5%; }
+.fargo-spots img:nth-child(3) { top: 25%; }
+.fargo-spots img:nth-child(4) { top: 37.5%; }
+.fargo-spots img:nth-child(5) { top: 50%; }
+.fargo-spots img:nth-child(6) { top: 62.5%; }
+.fargo-spots img:nth-child(7) { top: 75%; }
+.fargo-spots img:nth-child(8) { top: 87.5%; }
 
 .fargo-set { position: relative; z-index: 1; }
 
