@@ -99,7 +99,8 @@ em { font-style: italic; }
   transition: background 0.4s var(--ease), padding 0.4s var(--ease), border-color 0.4s var(--ease);
   border-bottom: 1px solid transparent;
 }
-.site-header.scrolled {
+.site-header.scrolled,
+.site-header.nav-hover {
   background: rgba(246, 243, 236, 0.86);
   backdrop-filter: blur(10px);
   padding: 16px 0;
@@ -125,7 +126,8 @@ em { font-style: italic; }
   transform: translateX(-50%);
   transition: color 0.4s var(--ease);
 }
-.site-header.scrolled .logo { color: var(--ink); }
+.site-header.scrolled .logo,
+.site-header.nav-hover .logo { color: var(--ink); }
 
 .nav-inline {
   position: absolute;

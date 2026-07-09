@@ -2,6 +2,7 @@
   const header = document.getElementById("header");
   const burger = document.getElementById("burger");
   const nav = document.getElementById("nav");
+  const navInline = document.querySelector(".nav-inline");
   const yearEl = document.getElementById("year");
 
   if (yearEl) yearEl.textContent = new Date().getFullYear();
@@ -27,6 +28,12 @@
   nav.querySelectorAll("a").forEach((link) => {
     link.addEventListener("click", () => setNavOpen(false));
   });
+
+  // Show the scrolled (cream) header while hovering the inline nav
+  if (navInline) {
+    navInline.addEventListener("mouseenter", () => header.classList.add("nav-hover"));
+    navInline.addEventListener("mouseleave", () => header.classList.remove("nav-hover"));
+  }
 
   // Reveal on scroll
   const revealEls = document.querySelectorAll(".reveal");
