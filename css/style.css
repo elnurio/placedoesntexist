@@ -478,49 +478,65 @@ h2 { font-size: clamp(32px, 4.5vw, 52px); margin-bottom: 48px; }
 /* Directions / Cards                                             */
 /* ------------------------------------------------------------ */
 .directions {
-  position: relative;
   padding: var(--section-y) 0;
-  background: var(--bg-alt);
-  border-top: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
+  background: #f2efe9;
+  border-top: 1px solid rgba(23, 20, 15, 0.1);
+  border-bottom: 1px solid rgba(23, 20, 15, 0.1);
 }
-.directions::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: url("../content/IMG_7800.jpg") center / cover no-repeat;
-  opacity: 0.5;
-  pointer-events: none;
-}
-.directions .container { position: relative; }
+
+.directions h2 { margin-bottom: clamp(36px, 5vw, 56px); }
 
 .cards {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1px;
-  background: var(--line);
-  border: 1px solid var(--line);
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid rgba(23, 20, 15, 0.1);
 }
 
 .card {
-  background: rgba(246, 243, 236, 0.72);
-  backdrop-filter: blur(6px);
-  padding: 44px 32px;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  transition: background 0.4s var(--ease);
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: clamp(32px, 6vw, 96px);
+  padding: clamp(32px, 4.5vw, 52px) 0;
+  border-bottom: 1px solid rgba(23, 20, 15, 0.1);
+  color: inherit;
 }
-.card:hover { background: rgba(246, 243, 236, 0.92); }
 
-.card-icon {
-  width: 40px; height: 40px;
+.card-art {
+  width: clamp(140px, 16vw, 220px);
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+}
+.card-art img {
+  width: 100%;
+  display: block;
+}
+
+.card-body { max-width: 520px; }
+.card h3 {
+  font-family: var(--font-display);
+  font-size: clamp(26px, 2.8vw, 36px);
+  font-weight: 400;
+  margin-bottom: 16px;
   color: var(--ink);
 }
-.card-icon svg { width: 100%; height: 100%; }
+.card p {
+  font-family: var(--font-body);
+  color: #707070;
+  font-size: clamp(14px, 1.4vw, 16px);
+  font-weight: 300;
+  line-height: 1.7;
+}
 
-.card h3 { font-size: 22px; }
-.card p { color: var(--ink-soft); font-size: 15px; line-height: 1.6; }
+.card-arrow {
+  color: var(--ink);
+  justify-self: end;
+  padding-right: clamp(8px, 2vw, 32px);
+  transition: transform 0.35s var(--ease);
+}
+.card-arrow svg { width: 32px; height: 32px; display: block; }
+a.card:hover .card-arrow { transform: translateX(8px); }
 
 /* ------------------------------------------------------------ */
 /* Italy                                                           */
@@ -731,7 +747,17 @@ h2 { font-size: clamp(32px, 4.5vw, 52px); margin-bottom: 48px; }
 
   .about-grid { grid-template-columns: 1fr; }
 
-  .cards { grid-template-columns: 1fr; }
+  .card {
+    grid-template-columns: auto 1fr;
+    gap: 24px;
+  }
+  .card-art { width: clamp(96px, 26vw, 150px); }
+  .card-arrow {
+    grid-column: 2;
+    justify-self: start;
+    padding: 0;
+  }
+  .card-arrow svg { width: 30px; height: 30px; }
 
   .italy-grid { grid-template-columns: 1fr; }
   .italy-visual { order: 1; }
