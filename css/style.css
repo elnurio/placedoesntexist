@@ -240,12 +240,6 @@ em { font-style: italic; }
   height: 24px;
   justify-self: start;
   z-index: 210;
-  color: #fff;
-  transition: color 0.4s var(--ease);
-}
-.site-header.scrolled .burger,
-.site-header.nav-hover .burger,
-.site-header--solid .burger {
   color: var(--ink);
 }
 .burger span {
