@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title data-i18n="fargo.title">Fargo — Место Которого Нет</title>
+<meta name="description" content="Fargo — портфолио. Place Doesn't Exist." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,700;1,6..72,400;1,6..72,500&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<div class="noise"></div>
+
+<header class="site-header site-header--solid" id="header">
+  <div class="header-bar">
+    <nav class="nav-inline">
+      <a href="index.html" class="nav-link" data-i18n="fargo.back">Назад</a>
+    </nav>
+
+    <div class="lang-switch" id="langSwitch">
+      <button type="button" class="lang-btn is-active" data-lang="ru">RU</button>
+      <span class="lang-sep">/</span>
+      <button type="button" class="lang-btn" data-lang="en">EN</button>
+    </div>
+
+    <div class="container header-inner">
+      <a href="index.html" class="logo" data-i18n="brand">Место Которого Нет</a>
+    </div>
+  </div>
+</header>
+
+<main class="fargo-main" id="top">
+  <div class="fargo-set" data-lang-set="ru">
+    <img src="content/fargo/ru/page-01.webp" alt="Fargo — страница 1" />
+    <img src="content/fargo/ru/page-02.webp" alt="Fargo — страница 2" loading="lazy" />
+    <img src="content/fargo/ru/page-03.webp" alt="Fargo — страница 3" loading="lazy" />
+    <img src="content/fargo/ru/page-04.webp" alt="Fargo — страница 4" loading="lazy" />
+    <img src="content/fargo/ru/page-05.webp" alt="Fargo — страница 5" loading="lazy" />
+    <img src="content/fargo/ru/page-06.webp" alt="Fargo — страница 6" loading="lazy" />
+    <img src="content/fargo/ru/page-07.webp" alt="Fargo — страница 7" loading="lazy" />
+    <img src="content/fargo/ru/page-08.webp" alt="Fargo — страница 8" loading="lazy" />
+    <img src="content/fargo/ru/page-09.webp" alt="Fargo — страница 9" loading="lazy" />
+    <img src="content/fargo/ru/page-10.webp" alt="Fargo — страница 10" loading="lazy" />
+    <img src="content/fargo/ru/page-11.webp" alt="Fargo — страница 11" loading="lazy" />
+    <img src="content/fargo/ru/page-12.webp" alt="Fargo — страница 12" loading="lazy" />
+    <img src="content/fargo/ru/page-13.webp" alt="Fargo — страница 13" loading="lazy" />
+  </div>
+
+  <div class="fargo-set" data-lang-set="en">
+    <img src="content/fargo/en/page-01.webp" alt="Fargo — page 1" />
+    <img src="content/fargo/en/page-02.webp" alt="Fargo — page 2" loading="lazy" />
+    <img src="content/fargo/en/page-03.webp" alt="Fargo — page 3" loading="lazy" />
+    <img src="content/fargo/en/page-04.webp" alt="Fargo — page 4" loading="lazy" />
+    <img src="content/fargo/en/page-05.webp" alt="Fargo — page 5" loading="lazy" />
+    <img src="content/fargo/en/page-06.webp" alt="Fargo — page 6" loading="lazy" />
+    <img src="content/fargo/en/page-07.webp" alt="Fargo — page 7" loading="lazy" />
+    <img src="content/fargo/en/page-08.webp" alt="Fargo — page 8" loading="lazy" />
+    <img src="content/fargo/en/page-09.webp" alt="Fargo — page 9" loading="lazy" />
+    <img src="content/fargo/en/page-10.webp" alt="Fargo — page 10" loading="lazy" />
+    <img src="content/fargo/en/page-11.webp" alt="Fargo — page 11" loading="lazy" />
+    <img src="content/fargo/en/page-12.webp" alt="Fargo — page 12" loading="lazy" />
+    <img src="content/fargo/en/page-13.webp" alt="Fargo — page 13" loading="lazy" />
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container meta-row">
+    <div class="meta-brand">
+      <span data-i18n="brand">Место Которого Нет</span>
+    </div>
+    <a href="#top" class="meta-link">
+      <span data-i18n="footer.top">Наверх</span>
+      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6" stroke="currentColor" stroke-width="1.2"/></svg>
+    </a>
+  </div>
+</footer>
+
+<script src="js/i18n.js"></script>
+<script>
+  (() => {
+    const sets = document.querySelectorAll(".fargo-set");
+    const syncSets = (lang) => {
+      sets.forEach((set) => {
+        set.classList.toggle("is-active", set.getAttribute("data-lang-set") === lang);
+      });
+    };
+    document.addEventListener("langchange", (e) => syncSets(e.detail.lang));
+    document.addEventListener("DOMContentLoaded", () => {
+      syncSets(document.documentElement.lang || "ru");
+    });
+  })();
+</script>
+</body>
+</html>

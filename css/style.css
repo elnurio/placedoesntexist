@@ -111,6 +111,13 @@ em { font-style: italic; }
   border-color: var(--line);
 }
 
+/* Solid header variant for inner pages (no hero photo behind it) */
+.site-header--solid {
+  background: var(--bg);
+  border-color: var(--line);
+}
+.site-header--solid .logo { color: var(--ink); }
+
 .header-inner {
   position: relative;
   display: flex;
@@ -199,24 +206,29 @@ em { font-style: italic; }
   transform: translateY(-50%);
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 7px;
   z-index: 210;
 }
 .lang-sep {
-  font-size: 10px;
+  font-size: 11px;
   color: var(--ink-soft);
 }
 .lang-btn {
   font-family: var(--font-body);
-  font-size: 10px;
+  font-size: 11px;
   font-weight: 600;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--ink-soft);
   cursor: pointer;
-  transition: color 0.25s var(--ease);
+  padding-bottom: 3px;
+  border-bottom: 1px solid transparent;
+  transition: color 0.25s var(--ease), border-color 0.25s var(--ease);
 }
-.lang-btn.is-active { color: var(--ink); }
+.lang-btn.is-active {
+  color: var(--ink);
+  border-color: var(--ink);
+}
 .lang-btn:hover { color: var(--ink); }
 
 .burger {
@@ -465,7 +477,22 @@ h2 { font-size: clamp(32px, 4.5vw, 52px); margin-bottom: 48px; }
 /* ------------------------------------------------------------ */
 /* Directions / Cards                                             */
 /* ------------------------------------------------------------ */
-.directions { padding: var(--section-y) 0; background: var(--bg-alt); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.directions {
+  position: relative;
+  padding: var(--section-y) 0;
+  background: var(--bg-alt);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+.directions::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("../content/IMG_7800.jpg") center / cover no-repeat;
+  opacity: 0.5;
+  pointer-events: none;
+}
+.directions .container { position: relative; }
 
 .cards {
   display: grid;
@@ -476,14 +503,15 @@ h2 { font-size: clamp(32px, 4.5vw, 52px); margin-bottom: 48px; }
 }
 
 .card {
-  background: var(--bg-alt);
+  background: rgba(246, 243, 236, 0.72);
+  backdrop-filter: blur(6px);
   padding: 44px 32px;
   display: flex;
   flex-direction: column;
   gap: 20px;
   transition: background 0.4s var(--ease);
 }
-.card:hover { background: var(--bg); }
+.card:hover { background: rgba(246, 243, 236, 0.92); }
 
 .card-icon {
   width: 40px; height: 40px;
@@ -600,6 +628,28 @@ h2 { font-size: clamp(32px, 4.5vw, 52px); margin-bottom: 48px; }
 .btn:hover { background: var(--ink); color: var(--bg); }
 
 /* ------------------------------------------------------------ */
+/* Fargo portfolio page                                            */
+/* ------------------------------------------------------------ */
+.fargo-main {
+  padding: 110px 0 60px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.fargo-set { display: none; }
+.fargo-set.is-active {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 0 clamp(10px, 2vw, 24px);
+}
+.fargo-set img {
+  width: 100%;
+  display: block;
+  box-shadow: 0 1px 12px rgba(23, 20, 15, 0.08);
+}
+
+/* ------------------------------------------------------------ */
 /* Footer                                                          */
 /* ------------------------------------------------------------ */
 .site-footer { padding: 32px 0; border-top: 1px solid var(--line); }
@@ -611,6 +661,9 @@ h2 { font-size: clamp(32px, 4.5vw, 52px); margin-bottom: 48px; }
 @media (max-width: 860px) {
   .nav-inline { display: none; }
   .burger { display: flex; }
+
+  /* Inner pages have no burger menu — keep the back link visible */
+  .site-header--solid .nav-inline { display: flex; }
 
   .styles-row { flex-direction: column; }
 
@@ -631,4 +684,8 @@ h2 { font-size: clamp(32px, 4.5vw, 52px); margin-bottom: 48px; }
 
 @media (max-width: 640px) {
   .hero-scroll { display: none; }
+
+  .logo { font-size: 17px; }
+  .site-header--solid .nav-inline { left: 16px; }
+  .lang-switch { right: 16px; }
 }

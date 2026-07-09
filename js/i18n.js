@@ -44,7 +44,8 @@ const I18N = (() => {
       "contact.heading": "Обсудим ваш<br /><em>проект</em>",
       "contact.sub": "Пришлите референсы, мудборд и детали проекта — мы свяжемся с вами, чтобы обсудить задачи и следующие шаги.",
       "footer.top": "Наверх",
-      "fargo.href": "content/Fargo%20Portfolio%20Ru.pdf",
+      "fargo.title": "Fargo — Место Которого Нет",
+      "fargo.back": "Назад",
     },
     en: {
       "meta.title": "Place Doesn't Exist — Full-Cycle Architecture & Interior Design",
@@ -87,7 +88,8 @@ const I18N = (() => {
       "contact.heading": "Let&rsquo;s discuss<br /><em>your project</em>",
       "contact.sub": "Send us your references, moodboard, and project details — we&rsquo;ll get in touch to discuss the brief and next steps.",
       "footer.top": "Back to top",
-      "fargo.href": "content/Fargo%20Portfolio%20Eng.pdf",
+      "fargo.title": "Fargo — Place Doesn't Exist",
+      "fargo.back": "Back",
     },
   };
 
@@ -122,16 +124,12 @@ const I18N = (() => {
       if (table[key] !== undefined) el.setAttribute("aria-label", table[key]);
     });
 
-    document.querySelectorAll("[data-i18n-href]").forEach((el) => {
-      const key = el.getAttribute("data-i18n-href");
-      if (table[key] !== undefined) el.setAttribute("href", table[key]);
-    });
-
     document.querySelectorAll(".lang-btn").forEach((btn) => {
       btn.classList.toggle("is-active", btn.getAttribute("data-lang") === lang);
     });
 
     setStoredLang(lang);
+    document.dispatchEvent(new CustomEvent("langchange", { detail: { lang } }));
   };
 
   const init = () => {
