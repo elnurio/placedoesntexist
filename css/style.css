@@ -99,11 +99,15 @@ em { font-style: italic; }
   transition: background 0.4s var(--ease), padding 0.4s var(--ease), border-color 0.4s var(--ease);
   border-bottom: 1px solid transparent;
 }
-.site-header.scrolled,
-.site-header.nav-hover {
+.site-header.scrolled {
   background: rgba(246, 243, 236, 0.86);
   backdrop-filter: blur(10px);
   padding: 16px 0;
+  border-color: var(--line);
+}
+.site-header.nav-hover {
+  background: rgba(246, 243, 236, 0.86);
+  backdrop-filter: blur(10px);
   border-color: var(--line);
 }
 
@@ -139,6 +143,7 @@ em { font-style: italic; }
 }
 .nav-inline a {
   font-size: 10px;
+  font-weight: 600;
   letter-spacing: 0.05em;
   text-transform: uppercase;
   position: relative;
@@ -289,12 +294,15 @@ em { font-style: italic; }
   padding: 16px 18px;
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 5px;
+  text-align: center;
 }
 
 .style-title-row {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
 }
 
@@ -314,7 +322,6 @@ em { font-style: italic; }
   font-style: italic;
   font-size: 11px;
   color: var(--ink-soft);
-  padding-left: 14px;
 }
 
 /* ------------------------------------------------------------ */
@@ -342,6 +349,7 @@ em { font-style: italic; }
 /* About                                                           */
 /* ------------------------------------------------------------ */
 .about { padding: var(--section-y) 0; }
+.styles + .about { padding-top: 40px; }
 
 .about-text {
   font-family: var(--font-display);
